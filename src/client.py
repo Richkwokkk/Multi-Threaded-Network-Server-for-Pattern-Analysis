@@ -1,30 +1,47 @@
+import sys
 import socket
-from node import Node
 
-def handle_client(client_socket, shared_list, shared_list_lock, connection_count):
-    book_title = client_socket.recv(1024).decode('utf-8')
-    book_head = Node(book_title)
+class Reader:
+    def __init__(self, server_host, server_port, book_file):
+        self.server_host = server_host
+        self.server_port = server_port
+        self.book_file = book_file
 
-    client_socket.sendall(b'ACK')
+    def send_book(self):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+            client_socket.connect((self.server_host, self.server_port))
 
-    while True:
-        data = client_socket.recv(1024)
-        if len(data) < 1024:
-            break
+            with open(self.book_file, 'r', encoding='utf-8') as file:
+                book_title = file.readline().strip() + '\n'
+                client_socket.sendall(book_title.encode('utf-8'))
 
-        with shared_list_lock:
-            shared_list.append(data.decode('utf-8'), book_head)
+                ack = client_socket.recv(1024)
+                if ack != b'READ\n':
+                    print("Error: Did not receive acknowledgment for the book title!")
+                    return
+                else:
+                    print(f"Acknowledgment received for book title: {book_title.strip()}")
 
-        client_socket.sendall(b'ACK')
+                for line in file:
+                    client_socket.sendall(line.encode('utf-8'))
 
-    client_socket.close()
-    write_received_book(book_head, connection_count)
+                    ack = client_socket.recv(1024)
+                    if ack != b'READ\n':
+                        print(f"Error: Did not receive acknowledgment for line: {line.strip()}")
+                        break
+                    else:
+                        print(f"Acknowledgment received for line: {line.strip()}")
 
-def write_received_book(book_head, connection_count):
-    filename = f"book_{connection_count:02}.txt"
-    with open(filename, 'w', encoding='utf-8') as file:
-        current = book_head
-        while current:
-            file.write(current.data + '\n')
-            current = current.book_next
-    print(f"Written received book to {filename}")
+            print("Book content sent successfully.")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python client.py <SERVER_HOST> <SERVER_PORT> <BOOK_FILE_PATH>")
+        sys.exit(1)
+
+    SERVER_HOST = sys.argv[1]
+    SERVER_PORT = int(sys.argv[2])
+    BOOK_FILE = sys.argv[3]
+
+    reader = Reader(SERVER_HOST, SERVER_PORT, BOOK_FILE)
+    reader.send_book()
