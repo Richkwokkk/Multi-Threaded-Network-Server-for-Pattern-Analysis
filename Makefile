@@ -1,8 +1,9 @@
-PYTHON = python3
-SERVER_FILE = src/main.py
-CLIENT_FILE = src/client.py
-PORT = 12345
-PATTERN = "happy"
+PYTHON ?= python3
+SRC_DIR = .
+SERVER_FILE = $(SRC_DIR)/main.py
+CLIENT_FILE = $(SRC_DIR)/client.py
+PORT ?= 12345
+PATTERN ?= "happy"
 BOOKS_DIR = books
 
 .PHONY: all run clean test send_books
