@@ -1,5 +1,5 @@
 import argparse
-from server import Server
+from src.server import Server
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Start the server.")
