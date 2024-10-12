@@ -1,6 +1,6 @@
 PYTHON ?= python3
-SERVER_FILE = main.py
-CLIENT_FILE = client.py
+SERVER_FILE = src/main.py
+CLIENT_FILE = src/client.py
 PORT ?= 12345
 PATTERN ?= "happy"
 BOOKS_DIR = books
