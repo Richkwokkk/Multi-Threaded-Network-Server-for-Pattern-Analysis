@@ -1,7 +1,6 @@
 PYTHON ?= python3
-SRC_DIR = .
-SERVER_FILE = $(SRC_DIR)/main.py
-CLIENT_FILE = $(SRC_DIR)/client.py
+SERVER_FILE = main.py
+CLIENT_FILE = client.py
 PORT ?= 12345
 PATTERN ?= "happy"
 BOOKS_DIR = books
