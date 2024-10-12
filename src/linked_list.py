@@ -34,3 +34,11 @@ class SharedLinkedList:
         print(f"Added node: {data}")
 
         return new_node
+
+    def __len__(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count

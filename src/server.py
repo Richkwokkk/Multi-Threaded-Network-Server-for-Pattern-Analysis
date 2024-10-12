@@ -1,8 +1,9 @@
 import socket
 import threading
 import uuid
-from linked_list import SharedLinkedList
-from pattern_analysis import PatternAnalysisThread
+import select
+from .linked_list import SharedLinkedList
+from .pattern_analysis import PatternAnalysisThread
 
 class Server:
     def __init__(self, host, port, pattern):
@@ -27,27 +28,44 @@ class Server:
 
     def handle_client(self, client_socket):
         book_id = uuid.uuid4()
-        first_data = client_socket.recv(1024).decode('utf-8')
-        book_title = first_data[:first_data.find('\n')]
+        book_head = None
+        book_title = None
+        buffer = b''
 
-        with self.shared_list.shared_list_lock:
-            book_head = self.shared_list.append(data=first_data, book_title=book_title, book_id=book_id, book_head=None)
-
-        client_socket.sendall(b'READ\n')
+        client_socket.setblocking(0)
 
         while True:
-            data = client_socket.recv(1024)
-            with self.shared_list.shared_list_lock:
+            ready = select.select([client_socket], [], [], 0.1)
+            if ready[0]:
                 try:
-                    self.shared_list.append(data=data.decode('utf-8'), book_head=book_head, book_title=book_title, book_id=book_id)
-                except UnicodeDecodeError:
+                    data = client_socket.recv(1024)
+                except BlockingIOError:
                     continue
-            client_socket.sendall(b'READ\n')
-            if len(data) < 1024:
+
+                if not data:
+                    break
+
+                buffer += data
+                lines = buffer.split(b'\n')
+                buffer = lines.pop()
+                
+                for line in lines:
+                    decoded_line = line.decode('utf-8', errors='ignore')
+                    with self.shared_list.shared_list_lock:
+                        if not book_head:
+                            book_title = decoded_line.strip()
+                            book_head = self.shared_list.append(data=decoded_line, book_title=book_title, book_id=book_id, book_head=None)
+                        else:
+                            self.shared_list.append(data=decoded_line, book_head=book_head, book_title=book_title, book_id=book_id)
+                    
+                    client_socket.sendall(b'READ\n')
+
+            if self.stop_event.is_set():
                 break
 
         client_socket.close()
-        self.write_received_book(book_head)
+        if book_head:
+            self.write_received_book(book_head)
 
     def write_received_book(self, book_head):
         self.connection_count += 1
@@ -60,6 +78,7 @@ class Server:
         print(f"Written received book to {filename}")
 
     def run_server(self):
+        self.server.setblocking(0)
         self.server.listen(10)
         print(f"Server started on port {self.port}")
         for thread in self.pattern_analysis_threads:
@@ -70,7 +89,7 @@ class Server:
                 client_socket, _ = self.server.accept()
                 client_handler = threading.Thread(target=self.handle_client, args=(client_socket,))
                 client_handler.start()
-            except socket.timeout:
+            except BlockingIOError:
                 continue
 
     def stop_server(self):
@@ -78,6 +97,9 @@ class Server:
         for conn in self.active_connections:
             conn.close()
         for thread in self.pattern_analysis_threads:
-            thread.stop_event.set()
-            thread.join()
-        self.server.close()
+            if thread.is_alive():
+                thread.stop_event.set()
+                thread.join()
+        if self.server:
+            self.server.close()
+        self.server = None
