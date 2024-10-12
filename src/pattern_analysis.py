@@ -5,7 +5,7 @@ class PatternAnalysisThread(threading.Thread):
     output_lock = threading.Lock()
     last_output_time = 0
 
-    def __init__(self, shared_linked_list, pattern, interval=3, thread_id=None):
+    def __init__(self, shared_linked_list, pattern, interval=5, thread_id=None):
         super().__init__()
         self.shared_list = shared_linked_list
         self.pattern = pattern
@@ -18,6 +18,7 @@ class PatternAnalysisThread(threading.Thread):
     def run(self):
         while not self.stop_event.is_set():
             self.analyze_data()
+            self.output_results()
             time.sleep(self.interval)
 
     def analyze_data(self):
@@ -36,8 +37,9 @@ class PatternAnalysisThread(threading.Thread):
         current_time = time.time()
         with PatternAnalysisThread.output_lock:
             if current_time - PatternAnalysisThread.last_output_time >= self.interval:
+                PatternAnalysisThread.last_output_time = current_time
                 sorted_books = sorted(self.book_counter.items(), key=lambda x: x[1], reverse=True)
-                print(f"\nPattern Analysis Report")
+                print(f"\nPattern Analysis Report (Thread {self.thread_id})")
                 print(f"Search Pattern: '{self.pattern}'")
                 print("Results:")
                 if sorted_books:
@@ -46,4 +48,3 @@ class PatternAnalysisThread(threading.Thread):
                 else:
                     print("No matches found.")
                 print("-" * 40)
-                PatternAnalysisThread.last_output_time = current_time
