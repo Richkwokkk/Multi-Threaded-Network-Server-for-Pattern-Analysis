@@ -1,6 +1,8 @@
 import unittest
 import threading
 import uuid
+import random
+import time
 from src.linked_list import SharedLinkedList, Node
 
 class TestSharedLinkedList(unittest.TestCase):
@@ -82,6 +84,96 @@ class TestSharedLinkedList(unittest.TestCase):
 
         for count in book_counts.values():
             self.assertEqual(count, nodes_per_thread)
+
+class TestSharedLinkedListThreadSafety(unittest.TestCase):
+    def setUp(self):
+        self.shared_list = SharedLinkedList()
+
+    def test_concurrent_appends(self):
+        num_threads = 10
+        operations_per_thread = 1000
+        
+        def append_random_data():
+            for _ in range(operations_per_thread):
+                book_id = uuid.uuid4()
+                self.shared_list.append(f"Data {random.randint(1, 1000)}", None, f"Book {random.randint(1, 10)}", book_id)
+        
+        threads = [threading.Thread(target=append_random_data) for _ in range(num_threads)]
+        
+        for thread in threads:
+            thread.start()
+        
+        for thread in threads:
+            thread.join()
+        
+        self.assertEqual(len(self.shared_list), num_threads * operations_per_thread)
+
+    def test_concurrent_reads_and_writes(self):
+        num_read_threads = 5
+        num_write_threads = 5
+        operations_per_thread = 1000
+        
+        def append_data():
+            for i in range(operations_per_thread):
+                book_id = uuid.uuid4()
+                self.shared_list.append(f"Data {i}", None, f"Book {i % 10}", book_id)
+        
+        def read_data():
+            for _ in range(operations_per_thread):
+                with self.shared_list.shared_list_lock:
+                    _ = len(self.shared_list)
+                    current = self.shared_list.head
+                    while current:
+                        _ = current.data
+                        current = current.next
+        
+        write_threads = [threading.Thread(target=append_data) for _ in range(num_write_threads)]
+        read_threads = [threading.Thread(target=read_data) for _ in range(num_read_threads)]
+        
+        all_threads = write_threads + read_threads
+        random.shuffle(all_threads)
+        
+        for thread in all_threads:
+            thread.start()
+        
+        for thread in all_threads:
+            thread.join()
+        
+        self.assertEqual(len(self.shared_list), num_write_threads * operations_per_thread)
+
+    def test_stress_test(self):
+        num_threads = 20
+        operations_per_thread = 5000
+        
+        def mixed_operations():
+            for _ in range(operations_per_thread):
+                operation = random.choice(['append', 'read', 'traverse'])
+                if operation == 'append':
+                    book_id = uuid.uuid4()
+                    self.shared_list.append(f"Data {random.randint(1, 1000)}", None, f"Book {random.randint(1, 10)}", book_id)
+                elif operation == 'read':
+                    with self.shared_list.shared_list_lock:
+                        if self.shared_list.head:
+                            _ = self.shared_list.head.data
+                elif operation == 'traverse':
+                    with self.shared_list.shared_list_lock:
+                        current = self.shared_list.head
+                        while current:
+                            _ = current.data
+                            current = current.next
+        
+        threads = [threading.Thread(target=mixed_operations) for _ in range(num_threads)]
+        
+        start_time = time.time()
+        for thread in threads:
+            thread.start()
+        
+        for thread in threads:
+            thread.join()
+        end_time = time.time()
+        
+        print(f"Stress test completed in {end_time - start_time:.2f} seconds")
+        print(f"Final list length: {len(self.shared_list)}")
 
 if __name__ == '__main__':
     unittest.main()
