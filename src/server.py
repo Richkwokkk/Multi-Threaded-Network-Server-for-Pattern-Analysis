@@ -15,33 +15,11 @@ def parse_arguments():
         parser.error("The listen port must be greater than 1024.")
     return args
 
-def start_analysis_threads(shared_list):
-    output_lock = threading.Lock()
+def start_analysis_threads(shared_list, output_lock):
     for _ in range(2):
         thread = threading.Thread(target=analyze_data, args=(shared_list, output_lock))
         thread.daemon = True
         thread.start()
-
-def socket_server(port, shared_list, book_id_counter_lock):
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('', port))
-    server.listen()
-    print(f"Server started on port {port}")
-
-    try:
-        while True:
-            connection, address = server.accept()
-            with book_id_counter_lock:
-                global book_id
-                book_id += 1
-                id = book_id
-            print(f"Accepted connection {id} from {address}")
-            client_thread = threading.Thread(target=handle_client, args=(connection, id, shared_list))
-            client_thread.start()
-    except KeyboardInterrupt:
-        print("Server shutting down...")
-    finally:
-        server.close()
 
 def write_received_book(book_id, shared_list):
     head = shared_list.get_head(book_id)
@@ -65,10 +43,28 @@ def main():
     port = args.l
     pattern = args.p
 
-    book_id_counter_lock = threading.Lock()
-    global book_id
-    book_id = 0
     shared_list = SharedLinkedList(pattern)
+    output_lock = threading.Lock()
+    book_id_counter_lock = threading.Lock()
+    book_id = 0
 
-    start_analysis_threads(shared_list)
-    socket_server(port, shared_list, book_id_counter_lock)
+    start_analysis_threads(shared_list, output_lock)
+
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(('', port))
+    server.listen()
+    print(f"Server started on port {port}")
+
+    try:
+        while True:
+            connection, address = server.accept()
+            with book_id_counter_lock:
+                book_id += 1
+                id = book_id
+            print(f"Accepted connection {id} from {address}")
+            client_thread = threading.Thread(target=handle_client, args=(connection, id, shared_list))
+            client_thread.start()
+    except KeyboardInterrupt:
+        print("Server shutting down...")
+    finally:
+        server.close()
