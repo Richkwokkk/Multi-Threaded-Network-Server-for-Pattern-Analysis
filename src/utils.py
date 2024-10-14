@@ -8,8 +8,8 @@ def write_received_book(book_id, shared_list):
     try:
         with open(filename, 'w', encoding='utf-8') as f:
             node = head
-            while node and node.book_id == book_id:
-                f.write(node.data + '\n')
+            while node:
+                f.write(node.line + '\n')
                 node = node.book_next
         print(f"Book {book_id} written to {filename}")
     except Exception as e:

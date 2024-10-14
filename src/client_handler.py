@@ -2,6 +2,7 @@ from .linked_list import Node
 from .utils import write_received_book
 
 def handle_client(client_socket, book_id, shared_list):
+    print(f"Handling client {book_id}")
     client_socket.setblocking(False)
     buffer = ""
 
@@ -9,12 +10,15 @@ def handle_client(client_socket, book_id, shared_list):
         while True:
             buffer = process_incoming_data(client_socket, buffer)
             if not buffer:
+                print(f"No more data from client {book_id}")
                 break
-            process_buffer(buffer, book_id, shared_list)
+            buffer = process_buffer(buffer, book_id, shared_list)
     except Exception as e:
         print(f"Error handling client {book_id}: {e}")
     finally:
         cleanup(client_socket, book_id, shared_list)
+    
+    print(f"Finished handling client {book_id}")
 
 def process_incoming_data(client_socket, buffer):
     try:

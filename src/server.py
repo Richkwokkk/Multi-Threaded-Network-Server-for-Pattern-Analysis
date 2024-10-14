@@ -40,14 +40,19 @@ def main():
 
     try:
         while True:
+            print("Waiting for a connection...")
             connection, address = server.accept()
             with book_id_counter_lock:
                 book_id += 1
                 id = book_id
             print(f"Accepted connection {id} from {address}")
             client_thread = threading.Thread(target=handle_client, args=(connection, id, shared_list))
+            print(f"Starting client thread for connection {id}")
             client_thread.start()
+            print(f"Client thread for connection {id} started")
     except KeyboardInterrupt:
         print("Server shutting down...")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
     finally:
         server.close()

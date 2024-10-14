@@ -1,8 +1,8 @@
 import threading
 
 class Node:
-    def __init__(self, data, book_id):
-        self.data = data
+    def __init__(self, line, book_id):
+        self.line = line
         self.book_id = book_id
         self.next = None
         self.book_next = None
@@ -32,7 +32,7 @@ class SharedLinkedList:
             self.books[node.book_id] = book
             self.pattern_counts[node.book_id] = 0
         else:
-            book['tail'].next = node
+            book['tail'].book_next = node
             book['tail'] = node
 
         if self.pattern in node.line:

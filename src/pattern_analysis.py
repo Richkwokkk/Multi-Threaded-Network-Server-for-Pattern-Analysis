@@ -16,8 +16,9 @@ def format_results(results):
         for idx, (_, title, count) in enumerate(results, start=1)
     )
 
-def analyze_data(shared_list, output_lock):
+def analyze_data(shared_list, output_lock, interval=2):
     while True:
+        time.sleep(interval)
         with acquire_lock(output_lock) as acquired:
             if not acquired:
                 continue
