@@ -1,44 +1,57 @@
 import threading
 
 class Node:
-    def __init__(self, data, book_title, book_id):
+    def __init__(self, data, book_id):
         self.data = data
+        self.book_id = book_id
         self.next = None
         self.book_next = None
         self.next_frequent_search = None
-        self.book_title = book_title
-        self.book_id = book_id
 
 class SharedLinkedList:
-    def __init__(self):
+    def __init__(self, pattern):
         self.head = None
         self.tail = None
+        self.books = {}
+        self.pattern = pattern
+        self.pattern_counts = {}
         self.shared_list_lock = threading.Lock()
 
-    def append(self, data, book_head, book_title, book_id):
-        new_node = Node(data=data, book_title=book_title, book_id=book_id) 
+    def append(self, node):
+        with self.shared_list_lock:
+            if self.head is None:
+                self.head = node
+                self.tail = node
+            else:
+                self.tail.next = node
+                self.tail = node
 
-        if not self.head:
-            self.head = new_node
+        book = self.books.get(node.book_id)
+        if book is None:
+            book = {'title': node.line.strip(), 'head': node, 'tail': node}
+            self.books[node.book_id] = book
+            self.pattern_counts[node.book_id] = 0
         else:
-            self.tail.next = new_node
+            book['tail'].next = node
+            book['tail'] = node
 
-        if book_head:
-            temp = book_head
-            while temp.book_next:
-                temp = temp.book_next
-            temp.book_next = new_node
+        if self.pattern in node.line:
+            self.pattern_counts[node.book_id] += 1
 
-        self.tail = new_node
+    def sort_books(self):
+        with self.shared_list_lock:
+            sorted_books = []
+            for id, book in self.books.items():
+                count = self.pattern_counts.get(id, 0)
+                sorted_books.append((id, book['title'], count))
 
-        print(f"Added node: {data}")
+            sorted_books.sort(key=lambda x: x[2], reverse=True)
 
-        return new_node
-
-    def __len__(self):
-        count = 0
-        current = self.head
-        while current:
-            count += 1
-            current = current.next
-        return count
+            return sorted_books
+        
+    def get_head(self, book_id):
+        with self.shared_list_lock:
+            book = self.books.get(book_id)
+            if book:
+                return book['head']
+            return None
