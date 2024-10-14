@@ -1,5 +1,5 @@
 from .linked_list import Node
-from .server import write_received_book
+from .utils import write_received_book
 
 def handle_client(client_socket, book_id, shared_list):
     client_socket.setblocking(False)
