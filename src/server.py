@@ -2,7 +2,7 @@ import socket
 import threading
 import argparse
 from .linked_list import SharedLinkedList
-from .pattern_analysis import PatternAnalysisThread
+from .pattern_analysis import analyze_data
 
 class Server:
     def __init__(self, port, pattern):
@@ -13,9 +13,9 @@ class Server:
         self.book_id_counter_lock = threading.Lock()
         self.output_lock = threading.Lock()
 
-    def run_server(self, max_connections=None):
+    def run_server(self):
         for i in range(2):
-            thread = PatternAnalysisThread(self.shared_list, self.pattern, interval=5, thread_id=i+1)
+            thread = threading.Thread(target=analyze_data, args=(self.shared_list, self.output_lock, 5))
             thread.daemon = True
             self.pattern_analysis_threads.append(thread)
             thread.start()
