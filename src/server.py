@@ -17,8 +17,8 @@ def parse_arguments():
 
 def start_analysis_threads(shared_list):
     output_lock = threading.Lock()
-    for i in range(2):
-        thread = threading.Thread(target=analyze_data, args=(shared_list, output_lock, 5))
+    for _ in range(2):
+        thread = threading.Thread(target=analyze_data, args=(shared_list, output_lock))
         thread.daemon = True
         thread.start()
 
