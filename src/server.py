@@ -64,7 +64,6 @@ def parse_arguments():
 
     if args.l <= 1024:
         parser.error("The listen port must be greater than 1024.")
-
     return args
 
 def main():

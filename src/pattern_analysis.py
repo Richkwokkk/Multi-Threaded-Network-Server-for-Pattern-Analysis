@@ -1,19 +1,36 @@
 import time
+from contextlib import contextmanager
+
+@contextmanager
+def acquire_lock(lock):
+    acquired = lock.acquire(blocking=False)
+    try:
+        yield acquired
+    finally:
+        if acquired:
+            lock.release()
+
+def format_results(results):
+    return "\n".join(
+        f"{idx}. '{title}' - {count} occurrences"
+        for idx, (_, title, count) in enumerate(results, start=1)
+    )
 
 def analyze_data(shared_list, output_lock, interval):
     while True:
         time.sleep(interval)
-        acquired = output_lock.acquire(blocking=False)
-        if acquired:
-            try:
-                results = shared_list.sort_books()
-                if results:
-                    timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-                    print(f"\nAnalysed Results at {timestamp}:")
-                    for idx, (id, title, count) in enumerate(results, start=1):
-                        print(f"{idx}. '{title}' - {count} occurrences")
-                    print()
-            finally:
-                output_lock.release()
-        else:
-            continue
+        
+        with acquire_lock(output_lock) as acquired:
+            if not acquired:
+                continue
+            
+            results = shared_list.sort_books()
+            if not results:
+                continue
+            
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            formatted_results = format_results(results)
+            
+            print(f"\nAnalysed Results at {timestamp}:")
+            print(formatted_results)
+            print()
