@@ -36,6 +36,11 @@ TEXT_FILES=(
     "books/book3.txt"
     "books/book4.txt"
     "books/book5.txt"
+    "books/book6.txt"
+    "books/book7.txt"
+    "books/book8.txt"
+    "books/book9.txt"
+    "books/book10.txt"
 )
 
 

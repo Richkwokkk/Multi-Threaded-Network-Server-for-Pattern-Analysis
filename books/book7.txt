@@ -1,0 +1,499 @@
+Title: How to study "The best short stories"
+        An analysis of Edward J. O'Brien's annual volumes of the best short stories of the year prepared for the use of writers and other students of the short-story
+
+Author: Blanche Colton Williams
+
+Release date: October 12, 2024 [eBook #74565]
+
+Language: English
+
+Original publication: Boston: Small, Maynard & Company
+
+Credits: Susan E. and the Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive/American Libraries.)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK HOW TO STUDY "THE BEST SHORT STORIES" ***
+
+
+Transcriber’s Notes
+
+Words in italics are marked with _underscores_.
+
+Words in small capitals are shown in UPPER CASE.
+
+Please also see the note at the end of the book.
+
+
+
+
+  HOW TO STUDY
+  “THE BEST SHORT STORIES”
+
+
+
+
+  How to Study
+  “The Best Short Stories”
+
+  AN ANALYSIS OF EDWARD J. O’BRIEN’S ANNUAL VOLUMES
+  OF THE BEST SHORT STORIES OF THE YEAR
+  PREPARED FOR THE USE OF WRITERS AND OTHER
+  STUDENTS OF THE SHORT-STORY
+
+  BY
+
+  BLANCHE COLTON WILLIAMS
+
+  Associate Professor of English, Hunter College of the City
+  of New York; Instructor in Short-Story Writing,
+  Columbia University (Extension Teaching and
+  Summer Session). Author of “Gnomic
+  Poetry in Anglo-Saxon,” “A Handbook
+  on Story Writing,” etc.;
+  Editor of “A Book of
+  Short Stories.”
+
+  [Illustration: Publisher’s Colophon]
+
+  BOSTON
+  SMALL, MAYNARD & COMPANY
+  PUBLISHERS
+
+
+
+
+  Copyright, 1919
+  BY SMALL, MAYNARD & COMPANY
+  (INCORPORATED)
+
+
+
+
+PREFACE
+
+
+In this foreword, I wish first of all to thank Captain Achmed Abdullah,
+Gertrude Atherton, Edwina Stanton Babcock, Barry Benefield, Thomas
+Beer, Katharine Holland Brown, Maxwell Struthers Burt, Francis Buzzell,
+Donn Byrne of Oriel, Charles Caldwell Dobie, Theodore Dreiser, George
+Gilbert, Susan Glaspell, Armistead C. Gordon, Fannie Hurst, Arthur
+Johnson, Fanny Kemble Johnson, Burton Kline, Mary Lerner, Sinclair
+Lewis, Jeannette Marks, Walter J. Muilenburg, Seumas O’Brien, Vincent
+O’Sullivan, Albert DuVerney Pentz, Lawrence Perry, Mary Brecht Pulver,
+Harrison Rhodes, Benjamin Rosenblatt, Fleta Campbell Springer, and
+Julian Street. Each of these authors very kindly gave data which no one
+could have gleaned; and in so doing they have contributed largely to
+the usefulness of this study.[1]
+
+[1] I must add to this list a former student, Pearl Doles Bell, who
+interviewed Mrs. Irvin Cobb and who read her notes to my summer class
+of 1916. (The interview was published, subsequently, in _The_ [New
+York] _Sun_, October 1, 1916.) My assistant, Miss Shirley V. Long,
+collaborated in the analysis of Miss Hurst’s “Get Ready the Wreaths.”
+
+Only the other day a student demanded, “Why can’t I get an author to
+tell me every step in the development of one of his stories?” Although,
+as I tried to point out, such a thorough proceeding is neither
+desirable nor easily possible,[2] yet the essentially valuable part of
+the author’s progress may be most illuminative, and it is obtainable.
+As one of these writers has said, the artist is not analytical
+beforehand and is not so, of necessity, after completing his work. But
+even from those who progress only, as they assert, by inspiration come
+clear and helpful statements concerning their starting points and
+developing processes. This generosity of successful writers augurs
+well for the future of fiction.
+
+[2] Poe seems to be the sole writer who has asserted that he could call
+to mind the progressive steps of any of his compositions.
+
+Charles Caldwell Dobie has said:[3] “Any man who has made a success
+of his business or profession always seems to consider it his duty
+to warn others off the field. The advice of both failure and success
+appears to be embodied in one and the same word, ‘Don’t!’ This is a
+curious paradox, and I shall not attempt to explain it. Perhaps it is
+because the roads to success or to failure are hard to distinguish, the
+sign-posts at the parting of the ways almost undecipherable. Yes, I
+think it must be this realization of the nearness of defeat that makes
+the successful one so anxious to dissuade others from the struggle. And
+yet, after all, there is a bit of egotism back of the kindly advice we
+offer, rather patronizingly, to our friends.
+
+[3] _The Silhouette_, February, 1917.
+
+“I would be the last person to warn the ambitious from literary
+endeavor, providing they would rather write than do anything else
+in the world; providing, also, they were equipped with three
+qualifications. Determination is the first; a hide at once sensitive
+and impervious ranks second; an hour--at least--a day to devote to the
+pursuit of their purpose. I say _devote_ advisedly; the true lover is
+never niggardly.... If added to these virtues, one has a quiet room and
+no telephone, half the battle is won.”[4]
+
+[4] Ellen Glasgow writes behind locked doors; Gertrude Atherton “rings
+down an iron curtain” between herself and the world.
+
+And, further, by way of emphasis on work and study, hear Burton Kline:
+“As an editor I have a feeling that some of the writers who should be
+railroad presidents or bank directors are getting in the way of real
+writers that I ought to be discovering. In the long run it is probably
+better to have all the writing we can get. The wider the net is spread,
+the greater the chance of something precious in the haul. The teaching
+of writing, even if it finds only a few real writers, helps to sharpen
+the critical taste of the others and whet their appetite for better
+writing. And I believe that sharper appetite and more discriminating
+taste is beginning to be felt.... In the creation of a literature, an
+audience is as necessary as the performers themselves. And the more
+critical the audience, the more likely we are to have great performers.
+The opportunity invites and develops them....”
+
+Speaking from the critic’s and teacher’s point of view, I not only
+believe that one can “learn to write”; I know, because more than once
+I have watched growth and tended effort from failure to success. Many
+would-be writers drop by the way; the telephone to pleasure is too
+insistent, or the creative process is not sufficiently joyful. Some
+students, however, need only an encouraging word and sympathetic
+criticism. Harriet Welles is an example of this sort. Her stories have
+been running in _Scribner’s_ for some months; she worked only a year
+in my class at Columbia before producing finished narratives. Others
+must labor and exercise patience in order to accomplish a few--perhaps
+one or two--worthy specimens of the story-teller’s art. I refer, for
+illustration, to another student, Elizabeth Stead Taber, whose “Scar”
+attracted favorable comment and drew from Mr. O’Brien high praise
+in his volume of 1917. Others write prolifically, turning out story
+after story, before attaining the highest publications and prices--but
+not of necessity before attaining excellent construction and style.
+Marjorie Lewis Prentiss comes to mind as an earnest and careful writer
+of this sort, who is improving as steadily as she writes and publishes
+regularly. I need not refer to Frederick S. Greene--now in France--who
+has become well known through his stories, and who felt that he worked
+best under class criticism. He studied as he wrote, and his published
+stories, with only two exceptions as I recall, were produced, first,
+for the class-room audience. Even those who succeed only once, or who
+never succeed, have learned to evaluate the content and the manner of
+the printed narrative, and have added to the body of the intelligent
+fiction-public.
+
+The _great artist_, let me add, hews his own way. But--! Gutzon Borglum
+once said that in his opinion there had lived only three great masters
+of art: Phidias, Michel Angelo, and Auguste Rodin. If these are the
+great names in sculpture and pictorial art, who are those in the world
+of fiction writing?
+
+... I use the form “short-story” to indicate the particular _genre_ or
+type, to distinguish it from the story that is merely short. I have
+laid down my definition in “A Handbook on Story Writing,”[5] a volume
+which the student of this book should have at hand. In the space here
+allowed, there can be no discussion of terminology. Mr. O’Brien has
+expressed himself as uninterested in technical distinctions, a fact
+which argues for the greater range of his choice. He has preferred
+the larger values, and therefore no adverse comment is implied in my
+classing a story in these collections as a novelette or another as
+a story that is merely short.[6] From the standpoint of literature,
+an advantage lies in the more extended field. And at best, opinions
+differ. I can only set down my own reactions, backed by eight years of
+teaching and a life-time interest in fiction.
+
+[5] Dodd Mead & Company, 1917. Third Edition, 1918.
+
+[6] In quoting, I have used “short story” or “short-story” as written
+by the various authors. It will be seen that the forms are usually
+interchangeable.
+
+To the student, I would emphasize the fact that studying these
+“Yearbook” stories, valuable as such study may become, will not make of
+you a writer; but from them, this little book, and the wealth of detail
+which Mr. O’Brien has accumulated, you can apprehend the elements of
+technique and learn, at the same time, what is successful from an
+editorial point of view. For every short-story writer must be both an
+artist and a man of business. If his work is not published, it _is_
+not. Much of it, early in the exercising stages, should die. But at the
+last there must be evidence of labor and of genius. Only one evidence
+is admissible: the product.
+
+While you are learning, then, do not try to publish. “Do” your
+exercises, and practise much; master the principles, and express
+yourself. When you have become full-grown, put away childish things,
+and forget that you ever heard of technique.
+
+                                                BLANCHE COLTON WILLIAMS.
+
+  New York City,
+    November 30, 1918.
+
+
+
+
+  CONTENTS
+
+  STORIES IN THE YEARBOOKS
+
+  1915, 1916, 1917, and 1918.
+
+
+                                                                   PAGE
+
+  A SIMPLE ACT OF PIETY. By Captain Achmed Abdullah           1918    1
+
+  THE SACRIFICIAL ALTAR. By Gertrude Atherton                 1916    8
+
+  THE EXCURSION. } By Edwina Stanton Babcock {                1917   12
+  CRUELTIES.     }                           {                1918   14
+
+  ONNIE. By Thomas Beer                                       1917   18
+
+  MISS WILLETT. By Barry Benefield                            1916   21
+
+  SUPERS. By Frederick Booth                                  1916   23
+
+  BUSTER. By Katharine Holland Brown                          1918   24
+
+  FOG. By Dana Burnet                                         1916   28
+
+  THE WATER-HOLE. } By Maxwell Struthers Burt {               1915   31
+  A CUP OF TEA.   }                           {               1917   33
+
+  MA’S PRETTIES. } By Francis Buzzell {                       1916   37
+  LONELY PLACES. }                    {                       1917   39
+
+  THE WAKE. By Donn Byrne                                     1915   42
+
+  THE GREAT AUK.     } By Irvin Cobb {                        1916   44
+  BOYS WILL BE BOYS. }               {                        1917   48
+
+  CHAUTONVILLE. By Will Levington Comfort                     1915   51
+
+  LAUGHTER.        } By Charles Caldwell Dobie {              1917   52
+  THE OPEN WINDOW. }                           {              1918   56
+
+  THE LOST PHOEBE. By Theodore Dreiser                        1916   59
+
+  LA DERNIÈRE MOBILISATION. By W. A. Dwiggins                 1915   61
+
+  THE EMPEROR OF ELAM. By H. G. Dwight                        1917   62
+
+  THE CITIZEN. By James Francis Dwyer                         1915   66
+
+  THE GAY OLD DOG. By Edna Ferber                             1917   67
+
+  BLIND VISION. By Mary Mitchell Freedley                     1918   71
+
+  IMAGINATION. By Gordon Hall Gerould                         1918   73
+
+  THE KNIGHT’S MOVE. By Katherine Fullerton Gerould           1917   75
+
+  IN MAULMAIN FEVER-WARD. By George Gilbert                   1918   77
+
+  A JURY OF HER PEERS. By Susan Glaspell                      1917   83
+
+  THE SILENT INFARE. By Armistead C. Gordon                   1916   86
+
+  THE CAT OF THE CANE-BRAKE. } By Frederick Stuart Greene }   1916   89
+  THE BUNKER MOUSE.          }                            }   1917   92
+
+  WHOSE DOG--? By Frances Gregg                               1915   95
+
+  MAKING PORT.  } By Richard Matthews Hallett {               1916   96
+  RAINBOW PETE. }                             {               1917   98
+
+  LIFE. By Ben Hecht                                          1915  100
+
+  THE FATHER’S HAND. By George Humphrey                       1918  101
+
+  T. B.                  }                 {                  1915  103
+  “ICE WATER, PL--!”     } By Fannie Hurst {                  1916  106
+  GET READY THE WREATHS. }                 {                  1917  109
+
+  MR. EBERDEEN’S HOUSE.    } By Arthur Johnson }              1915  112
+  THE VISIT OF THE MASTER. }                   }              1918  116
+
+  THE STRANGE-LOOKING MAN. By Fannie Kemble Johnson           1917  118
+
+  VENGEANCE IS MINE. By Virgil Jordan                         1915  119
+
+  THE CALLER IN THE NIGHT. } By Burton Kline {                1917  120
+  IN THE OPEN CODE.        }                 {                1918  124
+
+  LITTLE SELVES. By Mary Lerner                               1916  126
+
+  THE WILLOW WALK. By Sinclair Lewis                          1918  129
+
+  THE WEAVER WHO CLAD THE SUMMER. By Harris Merton Lyon       1915  136
+
+  THE SUN CHASER. By Jeannette Marks                          1916  139
+
+  THE STORY VINTON HEARD AT MALLORIE. By Katharine Prescott
+   Moseley                                                    1918  143
+
+  HEART OF YOUTH.         } By Walter J. Muilenburg {         1915  145
+  AT THE END OF THE ROAD. }                         {         1916  147
+
+  AT THE END OF THE PATH. By Newbold Noyes                    1915  149
+
+  THE WHALE AND THE GRASSHOPPER. By Seumas O’Brien            1915  151
+
+  IN BERLIN. By Mary Boyle O’Reilly                           1915  153
+
+  THE INTERVAL. By Vincent O’Sullivan                         1917  154
+
+  THE TOAST TO FORTY-FIVE. By William Dudley Pelley           1918  156
+
+  THE BIG STRANGER ON DORCHESTER HEIGHTS. By
+    Albert Du Verney Pentz                                    1916  159
+
+  “A CERTAIN RICH MAN--.” By Lawrence Perry                   1917  161
+
+  THE PATH OF GLORY. By Mary Brecht Pulver                    1917  165
+
+  EXTRA MEN. By Harrison Rhodes                               1918  170
+
+  THE WAITING YEARS. By Katharine Metcalf Roof                1915  172
+
+  ZELIG.       } By Benjamin Rosenblatt {                     1915  174
+  THE MENORAH. }                        {                     1916  176
+
+  THE SURVIVORS. } By Elsie Singmaster }                      1915  178
+  PENANCE.       }                     }                      1916  180
+
+  FEET OF GOLD. By Arthur Gordon Smith                        1916  182
+
+  SOLITAIRE. By Fleta Campbell Springer                       1918  184
+
+  THE YELLOW CAT.         }                  {                1915  189
+  DOWN ON THEIR KNEES.    } By Wilbur Daniel {                1917  192
+  CHING, CHING, CHINAMAN. } Steele           {                1917  194
+  THE DARK HOUR.          }                  {                1918  200
+
+  THE BIRD OF SERBIA. By Julian Street                        1918  202
+
+  THE BOUNTY JUMPER. } By Mary Synon {                        1915  207
+  NONE SO BLIND.     }               {                        1917  210
+
+  HALF-PAST TEN. By Alice L. Tildesley                        1916  212
+
+  AT ISHAM’S. By Edward C. Venable                            1918  214
+
+  DE VILMARTE’S LUCK. By Mary Heaton Vorse                    1918  216
+
+  THE WHITE BATTALION. By Frances Gilchrist Wood              1918  219
+
+
+
+
+GENERAL SUGGESTIONS
+
+
+Read the story before taking up the exercises.
+
+Consult the biographical data in the Yearbooks for 1916, 1917, and 1918.
+
+Observe to what extent the various authors have reflected the country
+or region in which they have lived. What conclusions do you draw?
+
+Many of the stories conform to the laws of the “Greek Unities.” Name
+them.
+
+The following list is composed of the stories which are best for
+_structural_ study.
+
+  - “A Simple Act of Piety”
+  - “The Sacrificial Altar”
+  - “The Water-Hole”
+  + “The Great Auk”
+  - “Boys Will Be Boys”
+  - “The Gay Old Dog”
+  - “The Knight’s Move”
+  - “In Maulmain Fever-Ward”
+  + “A Jury of Her Peers”
+  + “The Cat of the Cane-Brake”
+  - “The Bunker Mouse”
+  + “T. B.”
+  + “‘Ice Water, Pl----!’”
+  - “Get Ready the Wreaths”
+  - “Mr. Eberdeen’s House”
+  - “The Willow Walk”
+  + “‘A Certain Rich Man--’”
+  - “The Path of Glory”
+  + “The Waiting Years”
+  - “Solitaire”
+  + “The Yellow Cat”
+  - “Down on Their Knees”
+  - “Ching, Ching, Chinaman”
+  + “The Bounty Jumper”
+  + “None So Blind”
+  + “Half-Past Ten.”
+
+The plus signs are prefixed to the titles of stories which present the
+action in a closely circumscribed time and place. Study the stories to
+which the minus sign is prefixed to see how the authors have managed
+an extended period of time and place, or of either. On what phase of
+the action has emphasis been placed? How has each author achieved unity
+of effect? Notice the definite plot stages in these narratives marked
+by excellence of structure. Although the technique of every writer may
+differ from that of every other, yet in his story he will see to it,
+consciously or unconsciously, that high points, “lights,” or climaxes
+occur. It is a far call from the Roman _biga_ to the modern automobile;
+but wheels, body and motor attachment characterize each as a vehicle.
+From Poe to the present, the short-story vehicle has had, and will
+continue to have, certain type features.
+
+The titles should be studied for their attractiveness, originality,
+suggestiveness and bearing on the story.
+
+The title may be:
+
+  a. The name of the chief character--“Onnie,” “Chautonville.”
+
+  b. An epithet applied to the chief character--“The Great Auk,” “The
+     Bunker Mouse.”
+
+  c. A place--“Mr. Eberdeen’s House,” “The Water-Hole.”
+
+  d. A suggestion of--1. An objective theme or idea--“The Excursion,”
+     “The Wake.” 2. A subjective theme or idea--“The Sacrificial Altar,”
+     “Boys will be Boys.”
+
+  e. An allusion expressed fully, in part, or conveyed by
+     implication--“Vengeance is Mine,” “The Path of Glory.”
+
+One of the most difficult titles to create is that which has a veiled
+suggestion, some bearing on the story that is clear or significant only
+after the story has been read; e.g., “Get Ready the Wreaths,” “The
+Interval.”
+
+Group the stories according to dominant motives, observing with what
+frequence certain universal motive-themes occur. For example, the
+sacrifice motive is found in the following: “The Sacrificial Altar,”
+“Onnie,” “The Emperor of Elam,” “The Gay Old Dog,” “The Knight’s Move,”
+“The Bunker Mouse,” “Making Port,” “The Sun Chaser,” “Heart of Youth,”
+“A Certain Rich Man,” “Zelig,” “The Menorah,” “The Bounty Jumper,”
+“None So Blind.”
+
+In each of the stories just named, what _feeling_ or power prompts the
+sacrifice? What is the sacrifice? What is the effect of the sacrifice
+on the one making it? On the one for whom it is made? On the reader? On
+the final story-impression?
+
+Study the following as the best examples of realism: “The Excursion,”
+“Ma’s Pretties,” “Lonely Places,” “The Silent Infare,” “The Big
+Stranger on Dorchester Heights.” What difference, structurally, do
+you observe between these narratives and those developed by the more
+“romantic” writer?
+
+In every story try to find indications of the author’s theories about
+fiction or Art in general. For instance, in “Feet of Gold”: “Naturally,
+since all of us are artists, we seek the Truth through Beauty”; etc.
+(p. 309).
+
+Characters may be described by the author. This, the so-called
+“direct” method, is not in reality so direct or vivid as the so-called
+“indirect” method. By the latter a character reveals himself through
+act, speech, gesture; he is also portrayed by what others say about
+him, and by their reactions toward him.
+
+What difference exists in spirit, mood and tempo between the stories
+marked, respectively, by the direct and the indirect methods?
+
+By how many stories are you attracted at the beginning? Does the
+drawing power lie in character, suggested action, the picture of a
+setting, the mood or atmosphere, in some bit of philosophy, or other
+appeal?

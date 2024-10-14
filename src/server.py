@@ -34,7 +34,7 @@ def main():
     start_analysis_threads(shared_list, output_lock)
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('', port))
+    server.bind(('0.0.0.0', port))
     server.listen()
     print(f"Server started on port {port}")
 
