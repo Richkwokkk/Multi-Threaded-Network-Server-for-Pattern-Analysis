@@ -6,7 +6,6 @@ class Node:
         self.book_id = book_id
         self.next = None
         self.book_next = None
-        self.next_frequent_search = None
 
 class SharedLinkedList:
     def __init__(self, pattern):
