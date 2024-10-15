@@ -22,7 +22,6 @@ def write_received_book(book_id, shared_list):
         with open(filename, 'w', encoding='utf-8') as f:
             node = head
             while node:
-                # 根据你 split 时的逻辑，last line 不需要添加换行符
                 if node.book_next:
                     node.line += '\n'
                 f.write(node.line)

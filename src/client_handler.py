@@ -14,15 +14,18 @@ def handle_client(client_socket, book_id, shared_list):
     buffer = ""
 
     try:
+        buffer = ''
         while True:
-            buffer = process_incoming_data(client_socket, buffer)
-            if not buffer:
-                print(f"No more data from client {book_id}")
+            data = client_socket.recv(1024)
+            if not data:
                 break
-            if not '\n' in buffer:
-                shared_list.append(Node(buffer, book_id))
-                break
-            buffer = process_buffer(buffer, book_id, shared_list)
+            buffer += data.decode('utf-8', errors='ignore')
+            while '\n' in buffer:
+                line, buffer = buffer.split('\n', 1)
+                node = Node(line, book_id)
+                shared_list.append(node)
+        print(f"Added node from connection {book_id}: {line}")
+        shared_list.append(Node(buffer, book_id))
     except Exception as e:
         print(f"Error handling client {book_id}: {e}")
     finally:
@@ -73,25 +76,3 @@ def cleanup(client_socket, book_id, shared_list):
     client_socket.close()
     print(f"Connection {book_id} closed.")
     write_received_book(book_id, shared_list)
-
-# 这个可以替换，更简单
-def handle_client_1(client_socket, book_id, shared_list):
-    try:
-        buffer = ''
-        while True:
-            data = client_socket.recv(1024)
-            if not data:
-                break
-            buffer += data.decode('utf-8', errors='ignore')
-            while '\n' in buffer:
-                line, buffer = buffer.split('\n', 1)
-                node = Node(line, book_id)
-                shared_list.append(node)
-        print(f"Added node from connection {book_id}: {line}")
-        shared_list.append(Node(buffer, book_id))
-    except Exception as e:
-        print(f"Error handling client {book_id}: {e}")
-    finally:
-        cleanup(client_socket, book_id, shared_list)
-
-    print(f"Finished handling client {book_id}")

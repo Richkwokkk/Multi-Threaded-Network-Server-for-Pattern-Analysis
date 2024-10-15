@@ -20,7 +20,9 @@ The project consists of the following main components:
 - `src/pattern_analysis.py`: Performs periodic analysis of the received data
 - `src/linked_list.py`: Implements a custom linked list data structure for efficient data management
 - `src/utils.py`: Contains utility functions, such as writing received books to files
+- `assignment3.py`: Main server script that handles incoming connections and initializes the system
 - `tests/test.sh`: A bash script for testing the server with multiple simulated clients
+- `books/`: Directory containing text files for testing (book1.txt, book2.txt, etc.)
 
 ## Installation
 
@@ -38,7 +40,7 @@ The project consists of the following main components:
 To start the server, run the following command:
 
 ```
-python -m src.server -l <port> -p <pattern>
+python assignment3.py -l <port> -p <pattern>
 ```
 Where:
 - `<port>` is the port number the server should listen on (must be greater than 1024)
@@ -90,7 +92,9 @@ A bash script `tests/test.sh` is provided to test the server with multiple simul
 The test script will:
 - Check if the specified port is in use and kill any existing process using it
 - Start the server
-- Send content from multiple text files (located in a `books/` directory) to simulate clients
-- Stop the server after all clients have finished sending data
+- Send content from multiple text files (located in the `books/` directory) to simulate clients
+- Continue running the server after all clients have finished sending data
 
-Note: Ensure you have the necessary text files in the `books/` directory before running the test script.
+3. To stop the server, use Ctrl+C in the terminal where the test script is running.
+
+Note: Ensure you have the necessary text files (book1.txt, book2.txt, etc.) in the `books/` directory before running the test script.
