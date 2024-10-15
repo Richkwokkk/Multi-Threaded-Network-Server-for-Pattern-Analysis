@@ -44,6 +44,16 @@ Where:
 - `<port>` is the port number the server should listen on (must be greater than 1024)
 - `<pattern>` is the search pattern to analyze in the books
 
+To send text files to your program, consider utilising the netcat tool (nc). For instance, to transmit a text file to your server, you may use the following command:
+
+```
+nc localhost <port> -i <delay> < file.txt
+```
+Where:
+- `<port>` is the port number your server is listening on
+- `<delay>` is the delay between sending lines (in seconds)
+- `file.txt` is the text file you want to send
+
 ## How It Works
 
 1. The server starts and listens for incoming connections on the specified port.
