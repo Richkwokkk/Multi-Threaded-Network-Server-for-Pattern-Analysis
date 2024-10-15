@@ -19,6 +19,13 @@ echo "Starting server on $SERVER_HOST:$SERVER_PORT with pattern \"$PATTERN\"..."
 ./assignment3.py -l $SERVER_PORT -p "$PATTERN" &
 SERVER_PID=$!
 
+stop() {
+    echo "--- stop ---"
+    kill -9 $SERVER_PID
+}
+# 监听 SIGTERM 和 SIGINT 信号
+trap stop SIGINT SIGTERM
+
 sleep 2
 
 TEXT_FILES=(
@@ -61,6 +68,5 @@ done
 wait
 
 echo "Stopping server..."
-kill $SERVER_PID
 
 echo "Test completed."
