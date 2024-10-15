@@ -10,6 +10,7 @@ class Node:
 
 class SharedLinkedList:
     def __init__(self, pattern):
+        # Initialize the shared linked list
         self.head = None
         self.tail = None
         self.books = {}
@@ -18,6 +19,7 @@ class SharedLinkedList:
         self.shared_list_lock = threading.Lock()
 
     def append(self, node):
+        # Add a new node to the shared linked list
         with self.shared_list_lock:
             if self.head is None:
                 self.head = node
@@ -26,19 +28,24 @@ class SharedLinkedList:
                 self.tail.next = node
                 self.tail = node
 
+        # Update book-specific linked list
         book = self.books.get(node.book_id)
         if book is None:
+            # Create a new book entry if it doesn't exist
             book = {'title': node.line.strip(), 'head': node, 'tail': node}
             self.books[node.book_id] = book
             self.pattern_counts[node.book_id] = 0
         else:
+            # Append to existing book's linked list
             book['tail'].book_next = node
             book['tail'] = node
 
+        # Update pattern count for the book
         if self.pattern in node.line:
             self.pattern_counts[node.book_id] += 1
 
     def sort_books(self):
+        # Sort books based on pattern occurrence count
         with self.shared_list_lock:
             sorted_books = []
             for id, book in self.books.items():
@@ -50,6 +57,7 @@ class SharedLinkedList:
             return sorted_books
         
     def get_head(self, book_id):
+        # Get the head node of a specific book's linked list
         with self.shared_list_lock:
             book = self.books.get(book_id)
             if book:
