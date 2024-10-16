@@ -1,9 +1,9 @@
 import socket
 import threading
 import argparse
-from .linked_list import SharedLinkedList
-from .pattern_analysis import analyze_data
-from .client_handler import handle_client
+from linked_list import SharedLinkedList
+from pattern_analysis import analyze_data
+from client_handler import handle_client
 
 def parse_arguments():
     """
@@ -13,8 +13,8 @@ def parse_arguments():
         argparse.Namespace: Parsed arguments containing 'l' (listen port) and 'p' (search pattern).
     """
     parser = argparse.ArgumentParser(description="Start the server.")
-    parser.add_argument('-l', type=int, required=True, help='The listen port for the server.')
-    parser.add_argument('-p', type=str, required=True, help='The search pattern.')
+    parser.add_argument('-l', type=int, default=12345, help='The listen port for the server.')
+    parser.add_argument('-p', type=str, default='',help='The search pattern.')
     args = parser.parse_args()
 
     if args.l <= 1024:

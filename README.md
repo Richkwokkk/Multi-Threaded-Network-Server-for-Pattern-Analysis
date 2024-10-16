@@ -15,14 +15,14 @@ This project implements a multi-threaded server that receives book content from 
 
 The project consists of the following main components:
 
-- `src/server.py`: Main server script that handles incoming connections and initializes the system
-- `src/client_handler.py`: Manages individual client connections and processes incoming data
-- `src/pattern_analysis.py`: Performs periodic analysis of the received data
-- `src/linked_list.py`: Implements a custom linked list data structure for efficient data management
-- `src/utils.py`: Contains utility functions, such as writing received books to files
+- `server.py`: Main server script that handles incoming connections and initializes the system
+- `client_handler.py`: Manages individual client connections and processes incoming data
+- `pattern_analysis.py`: Performs periodic analysis of the received data
+- `linked_list.py`: Implements a custom linked list data structure for efficient data management
+- `utils.py`: Contains utility functions, such as writing received books to files
 - `assignment3.py`: Main server script that handles incoming connections and initializes the system
-- `tests/test.sh`: A bash script for testing the server with multiple simulated clients
-- `books/`: Directory containing text files for testing (book1.txt, book2.txt, etc.)
+- `test.sh`: A bash script for testing the server with multiple simulated clients
+- `books/`: Directory containing text files for test.sh (book1.txt, book2.txt, etc.)
 
 ## Installation
 
@@ -46,6 +46,12 @@ Where:
 - `<port>` is the port number the server should listen on (must be greater than 1024)
 - `<pattern>` is the search pattern to analyze in the books
 
+Example:
+```
+python assignment3.py -l 12345 -p "happy"
+```
+This starts the server on port 12345 and analyzes the frequency of the word "happy" in the received books.
+
 To send text files to your program, consider utilising the netcat tool (nc). For instance, to transmit a text file to your server, you may use the following command:
 
 ```
@@ -54,7 +60,15 @@ nc localhost <port> -i <delay> < file.txt
 Where:
 - `<port>` is the port number your server is listening on
 - `<delay>` is the delay between sending lines (in seconds)
-- `file.txt` is the text file you want to send
+- `file.txt` is the text file you want to send, which should be put in root directory
+
+Example:
+```
+nc localhost 12345 -i 0 < book1.txt
+```
+This sends the content of book1.txt to the server running on localhost:12345, with a 0.1-second delay between each line.
+
+To stop the server, use Ctrl+C in the terminal where the server is running. This will gracefully shut down the server and save any unsaved data.
 
 ## How It Works
 
@@ -67,21 +81,21 @@ Where:
 
 ## Testing
 
-A bash script `tests/test.sh` is provided to test the server with multiple simulated clients. To use the test script:
+A bash script `test.sh` is provided to test the server with multiple simulated clients. To use the test script:
 
 1. Ensure the script is executable:
    ```
-   chmod +x tests/test.sh
+   chmod +x test.sh
    ```
 
 2. Run the script with the following parameters:
    ```
-   ./tests/test.sh <server_host> <server_port> <pattern> <num_clients> <delay>
+   ./test.sh <server_host> <server_port> <pattern> <num_clients> <delay>
    ```
 
    Example:
    ```
-   ./tests/test.sh localhost 12345 "happy" 10 0
+   ./test.sh localhost 12345 "happy" 10 0
    ```
 
    This will:

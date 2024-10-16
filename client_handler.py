@@ -1,5 +1,5 @@
-from .linked_list import Node
-from .utils import write_received_book
+from linked_list import Node
+from utils import write_received_book
 
 def handle_client(client_socket, book_id, shared_list):
     """

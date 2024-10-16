@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-from src import server
+
+from server import main
 
 if __name__ == "__main__":
-    server.main()
+    main()
