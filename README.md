@@ -28,7 +28,7 @@ The project consists of the following main components:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Richkwokkk/Multi-Threaded-Network-Server-for-Pattern-Analysis
+   git clone https://github.com/Richkwokkk/book-analysis-server
    ```
 
 2. Ensure you have Python 3 installed on your system.
